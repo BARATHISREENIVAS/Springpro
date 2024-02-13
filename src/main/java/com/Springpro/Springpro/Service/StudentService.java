@@ -37,8 +37,9 @@ public class StudentService {
 		return null;
 	}
 	
-	public void deleteDetails(int id) {
-		return studentRepo.deleteById(id);
+	public String deleteDetails(int id) {
+		 studentRepo.deleteById(id);
+		 return "Deleted"+id;
 		
 	}
 	
