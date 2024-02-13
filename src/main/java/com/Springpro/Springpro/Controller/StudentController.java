@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,5 +30,10 @@ public class StudentController {
 	@GetMapping("/getStudentById/{id}")
 	public Student getDetailsById(@PathVariable int id) {
 		return studentService.getStudentDetailsById(id);
+	}
+	
+	@PutMapping("/updateStudent")
+	public Student updateStudentDetails(@RequestBody Student student) {
+		return studentService.updateDetails(student);
 	}
 }
